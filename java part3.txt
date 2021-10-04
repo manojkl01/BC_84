@@ -1,0 +1,342 @@
+using instanceof operator
+public class Car {
+    protected String fuel_type;
+    protected int year;
+
+    public Car(String fuel_type, int year) {
+        this.fuel_type = fuel_type;
+        this.year = year;
+    }
+
+
+    public String getinfo() {
+        return "fuel type: "+fuel_type+" invented in: "+year;
+    }
+
+}
+public class Bugatti extends Car{
+    private String name, fuel_type;
+    private int cc;
+
+    public Bugatti(String name, String fuel_type, int cc, int year) {
+        super(fuel_type, year);
+        this.name = name;
+        this.fuel_type = fuel_type;
+        this.cc = cc;
+    }
+
+    public String getinfo(){
+        return "Car name: "+name+", its fuel type: "+fuel_type+", "+cc+" in the year "+year;
+    }
+    public int getYear(){
+        return year;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getFuel_type() {
+        return fuel_type;
+    }
+
+    public int getCc() {
+        return cc;
+    }
+}
+public class BugUpdate {
+
+    public String getdetails(Bugatti b){
+        if (b instanceof Bugatti)
+            return b.getYear()+"with production "+(b.getYear()+1);
+        else
+            return b.getYear()+"with production "+(b.getYear()+2);
+    }
+}
+public class Main{
+public static void main(String args[]){
+ Car[] carr=new Bugatti[2];
+        BugUpdate bu1=new BugUpdate();
+        carr[0]=new Bugatti("Bugatti chiron", "Petrol", 7993, 2016);
+        carr[1]=new Bugatti("Bugatti veyron", "Petrol", 7993,2011);
+
+        for (Car c:carr) {
+            System.out.println(c.getinfo());
+            System.out.println(bu1.getdetails((Bugatti)c));
+        }
+}
+}
+OUTPUT:   Car name: Bugatti chiron, its fuel type: Petrol, 7993 in the year 2016
+2016with production 2017
+Car name: Bugatti veyron, its fuel type: Petrol, 7993 in the year 2011
+2011with production 2012
+
+
+File handling:
+
+package com.thbs;
+
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        File f1=new File("C:\\Users\\manoj_dilip\\Desktop\\demo111.txt");
+        /*try {
+            f1.createNewFile();
+            System.out.println("File created successfully...........");
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        System.out.println(f1.getAbsolutePath());*/
+
+        /*File dir=new File("C:\\Users\\manoj_dilip\\Documents");
+        File[] file_list=dir.listFiles();
+        for (File f:file_list)
+            System.out.println(f);*/
+
+        try(FileReader fr=new FileReader(f1);
+        BufferedReader br=new BufferedReader(fr);
+        FileWriter fw=new FileWriter(f1)){
+            String s1= br.readLine();
+            while (s1.equals("End")){
+                System.out.println(s1);
+                s1=br.readLine();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (NullPointerException e){
+
+        }
+
+
+    }
+}
+
+
+
+byte by byte
+package com.thbs;
+
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        File f1=new File("C:\\Users\\manoj_dilip\\Desktop\\demo111.txt");//source file
+        File f2=new File("C:\\Users\\manoj_dilip\\Desktop\\demo112.txt");//destn file
+
+        try(FileInputStream ip=new FileInputStream(f1);
+            BufferedInputStream bfinp=new BufferedInputStream(ip);
+
+            FileOutputStream out=new FileOutputStream(f2);
+            BufferedOutputStream bfout=new BufferedOutputStream(out);) {
+
+            //byte by byte fle handling
+            /*int c;
+            while ((c=bfinp.read())!=-1){
+                bfout.write(c);
+                System.out.print((char)c);
+            }
+        }
+        catch (FileNotFoundException e){
+//            e.printStackTrace();
+        }
+        catch (IOException e){
+            //e.printStackTrace();
+        }*/
+            byte[] buffer = new byte[bfinp.available()];
+            bfinp.read(buffer);
+            bfout.write(buffer);
+            for (byte b1:buffer)
+                System.out.print((char) b1);
+
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+}
+output tranfers contents from file1 to file2
+Java
+HTML
+CSS
+Kotlin
+
+FILE READ WRITE OBJECT:
+package com.thbs;
+
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        File f1=new File("C:\\Users\\manoj_dilip\\Desktop\\demo111.dat");//source file
+
+        try(FileOutputStream out=new FileOutputStream(f1);
+            ObjectOutputStream objout=new ObjectOutputStream(out);
+
+            FileInputStream inp=new FileInputStream(f1);
+            ObjectInputStream objinp=new ObjectInputStream(inp);){
+            //Serialization
+                Student st1=new Student(1,"Mani",80);
+                objout.writeObject(st1);
+                Student st2=new Student(2,"Manju",89);
+                objout.writeObject(st2);
+            System.out.println("Done");
+            //De-Serialization
+            while (inp.available()>0){
+                Student stud=(Student) objinp.readObject();
+                System.out.println(stud);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+package com.thbs;
+
+import java.io.Serializable;
+
+public class Student implements Serializable {
+    private int id;
+    private String name;
+    public int marks;
+
+    public Student(int id, String name, int marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", marks=" + marks +
+                '}';
+    }
+}
+OUTPUT IN CONSOLE:
+Done
+Student{id=1, name='Mani', marks=80}
+Student{id=2, name='Manju', marks=89}
+
+OUTPUT IN dat file:
+¬í sr com.thbs.Student§SÛbû€ I idI marksL namet Ljava/lang/String;xp      Pt Manisq ~        Yt Manju
+
+
+CustomException demo:
+
+package com.thbs.Aadhar_pack;
+
+public class InvalidAgeException extends Exception{
+
+    public InvalidAgeException(String str){
+        super(str);
+    }
+
+}
+
+package com.thbs.Aadhar_pack;
+
+public class VoterId {
+    private String Aadhar_id;
+    private String name;
+    private int age;
+
+    public VoterId(String id, String name, int age) {
+        this.Aadhar_id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public String validate() throws InvalidAgeException {
+        if (age<18)
+            throw new InvalidAgeException("You are too young to vote, so you are not eligible getting voter id");
+        else{
+            return "You have successfully applied for voterid";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "VoterId{" +
+                "id='" + Aadhar_id + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
+
+package com.thbs.main_pack;
+
+import com.thbs.Aadhar_pack.InvalidAgeException;
+import com.thbs.Aadhar_pack.VoterId;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        VoterId v=new VoterId("abc001","Srikanth",25);
+        try {
+            System.out.println(v.validate());
+        } catch (InvalidAgeException e) {
+            e.printStackTrace();
+        }
+    }
+}
+Output:
+You have successfully applied for voterid
+
+About Strings:
+package com.thbs;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        String str1="Hello World";
+        String str2="Hello World";
+        String str3=new String("Hello World");
+
+        /*System.out.println(str1.equals(str2));
+        System.out.println(str1==str2);
+        System.out.println(str1==str3);
+        System.out.println(str1.equals(str3));
+        System.out.println();*/
+        String s="Welcome";
+        System.out.println(s.lastIndexOf('l'));
+        System.out.println(s.toUpperCase());
+
+        String res=String.join("--","Hello","World");
+        System.out.println(res);
+        System.out.println(s.replace('W','H'));
+
+    }
+}
+OUTPUT
+true
+true
+false
+true
+
+2
+WELCOME
+Hello--World
+Helcome
