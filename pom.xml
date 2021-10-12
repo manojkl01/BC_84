@@ -1,3 +1,9 @@
+@Override
+	public String toString() {
+		return "Book [tarin_no=" + train_no + ", Trainame=" + trainname + ", Source=" + source + 
+				"Destination:"+destination+" Ticket price: "+ticketprice+"]";
+	}
+
 <dependency>
 <groupId>org.springframework</groupId>
 <artifactId>spring-context</artifactId>
