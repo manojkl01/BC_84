@@ -1,0 +1,619 @@
+				COLLECTIONS
+				  a)LIST
+ARRAY LIST:
+package com.thbs;
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+        List<String> Al = new ArrayList<String>();
+        Al.add("Libin");
+        Al.add("Mani");
+        Al.add("Manju");
+        Al.add("Manoj");
+        Al.add("Manoj");
+        Al.add("Lokesh");
+        System.out.println(Al);
+        Al.remove("Manoj");
+        System.out.println(Al);
+        Al.add(0, "Kiran");
+
+        for (String i : Al)
+            System.out.print(i + "  ");
+
+        Iterator<String> it = Al.listIterator();//if iterator is casted to String then its methods could be used for iteration
+        System.out.println();
+        while (it.hasNext())
+            System.out.print(it.next().toUpperCase() + "  ");
+
+        List<Integer> Al1 = new ArrayList<Integer>();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter array list size: ");
+        int n = sc.nextInt(), ele;
+        for (int i = 0; i < n; i++) {
+            ele = sc.nextInt();
+            Al1.add(ele);
+        }
+        sc.close();
+        int sum=0;
+        for (int i:Al1){
+            sum+=i;}
+            System.out.println(sum);
+}
+}
+}
+OUTPUT:
+[Libin, Mani, Manju, Manoj, Manoj, Lokesh]
+[Libin, Mani, Manju, Manoj, Lokesh]
+Kiran  Libin  Mani  Manju  Manoj  Lokesh  
+KIRAN  LIBIN  MANI  MANJU  MANOJ  LOKESH  enter array list size: 
+5
+2
+1
+3
+6
+7
+19
+
+2.Linked list:
+ LinkedList<String> ll=new LinkedList<String>();
+        ll.add("Virat");
+        ll.add("Rohit");
+        ll.add("Sachin");
+        System.out.println(ll);
+        Iterator it=ll.iterator();
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
+        ll.add(1,"Yuvraj");
+        System.out.println(ll);
+        ll.add(2,"Dravid");
+        System.out.println(ll);
+        ll.set(3,"Sehwag");
+        System.out.println(ll);
+        Collections.sort(ll);
+        System.out.println(ll);
+        Iterator it1= ll.descendingIterator();
+        while (it1.hasNext())
+            System.out.print(it1.next()+" ");
+        System.out.println();
+        System.out.println(ll);
+        System.out.println(ll.peek());
+        System.out.println(ll);
+        System.out.println(ll.poll());
+        System.out.println(ll);
+OUTPUT:
+[Virat, Rohit, Sachin]
+Virat
+Rohit
+Sachin
+[Virat, Yuvraj, Rohit, Sachin]
+[Virat, Yuvraj, Dravid, Rohit, Sachin]
+[Virat, Yuvraj, Dravid, Sehwag, Sachin]
+[Dravid, Sachin, Sehwag, Virat, Yuvraj]
+Yuvraj Virat Sehwag Sachin Dravid 
+[Dravid, Sachin, Sehwag, Virat, Yuvraj]
+Dravid
+[Dravid, Sachin, Sehwag, Virat, Yuvraj]
+Dravid
+[Sachin, Sehwag, Virat, Yuvraj]
+
+3.VECTOR:
+Vector<Integer> vt=new Vector<Integer>();
+        vt.add(4);
+        vt.add(1);
+        vt.add(3);
+        vt.add(8);
+        vt.add(12);
+        System.out.println(vt);
+        vt.set(2,22);
+        vt.set(0,11);
+        System.out.println(vt);
+        System.out.println(vt.firstElement());
+        System.out.println(vt.size());
+        vt.trimToSize();
+        System.out.println(vt.size());
+
+OUTPUT:
+[4, 1, 3, 8, 12]
+[11, 1, 22, 8, 12]
+11
+5
+5
+
+STACK:
+Stack<String> st=new Stack<String>();
+        st.push("Lokesh");
+        st.push("Manoj");
+        st.push("Mani");
+        st.push("Akshay");
+        System.out.println(st);
+        st.pop();
+        System.out.println(st);
+        System.out.println(st.peek());
+        System.out.println(st.search("Lokesh"));
+        System.out.println(st.capacity());
+        System.out.println(st.elementAt(2));
+
+OUTPUT:
+[Lokesh, Manoj, Mani, Akshay]
+[Lokesh, Manoj, Mani]
+Mani
+3
+10
+Mani
+
+				b)SET
+1.HASH SET
+package com.thbs;
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Set s=new HashSet();
+        s.add(7);
+        s.add("Hello");
+        s.add('m');
+        s.add(45.7);
+        s.add(null);
+        for (Object i:s)
+            System.out.println(i);
+
+        Set<String> s1=new HashSet<String>();
+        s1.add("Java");
+        s1.add("java");
+        s1.add("HTML");
+        s1.add("html");
+        s1.add("ABD");
+        System.out.println(s1);
+        System.out.println(s1.contains("HTML"));
+        System.out.println(s1.contains("CSS"));
+        s.remove('m');
+        System.out.println(s);
+        Iterator it=s1.iterator();
+        while (it.hasNext())
+            System.out.print(it.next()+",");
+OUTPUT:
+null
+Hello
+7
+45.7
+m
+[Java, java, ABD, HTML, html]
+true
+false
+[null, Hello, 7, 45.7]
+Java,java,ABD,HTML,html,
+
+
+2.LINKED HASHSET
+
+   Set<String> Lh=new LinkedHashSet<String>();
+        Lh.add("Java");
+        Lh.add("java");
+        Lh.add("HTML");
+        Lh.add("html");
+        Lh.add("ABD");
+        System.out.println(Lh);
+	System.out.println(Lh.isEmpty());
+        System.out.println(Lh.contains("java"));
+        System.out.println(Lh.size());
+
+OUTPUT:
+[Java, java, HTML, html, ABD]
+false
+true
+5
+
+
+3.Tree SET
+  Set<Integer> Ts=new TreeSet<Integer>();
+        Ts.add(3);
+        Ts.add(4);
+        Ts.add(7);
+        Ts.add(2);
+        Ts.add(3);Ts.add(5);
+        System.out.println(Ts);
+        System.out.println(Ts.remove(1));
+        System.out.println(Ts.stream().count());
+
+OUTPUT:
+[2, 3, 4, 5, 7]
+false
+5
+
+			c)QUEUE
+Priority queue
+
+package com.thbs;
+
+import java.util.Collections;
+import java.util.PriorityQueue;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        PriorityQueue<Priorityqueue> pq=new PriorityQueue<Priorityqueue>();
+        pq.add(new Priorityqueue(3,"Colgate"));
+        pq.add(new Priorityqueue(1,"Axe"));
+        pq.add(new Priorityqueue(5,"Gillette"));
+        pq.add(new Priorityqueue(2,"Samsung"));
+        pq.add(new Priorityqueue(4,"Lays"));
+
+        for (Priorityqueue p:pq)
+            System.out.println(p);
+
+        System.out.println("-------------------------");
+        pq.poll();
+        for (Priorityqueue p:pq)
+            System.out.println(p);
+
+    }
+}
+OUTPUT:
+Priorityqueue{id=1, name='Axe'}
+Priorityqueue{id=2, name='Samsung'}
+Priorityqueue{id=5, name='Gillette'}
+Priorityqueue{id=3, name='Colgate'}
+Priorityqueue{id=4, name='Lays'}
+-------------------------
+Priorityqueue{id=2, name='Samsung'}
+Priorityqueue{id=3, name='Colgate'}
+Priorityqueue{id=5, name='Gillette'}
+Priorityqueue{id=4, name='Lays'}
+
+
+			Collections: Map
+package com.thbs;
+
+import java.util.Collection;
+import java.util.*;
+import java.util.Set;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Map<Integer,String> m=new HashMap<Integer, String>();
+        m.put(45,"Rohit");
+        m.put(18,"Kohli");
+        m.put(null,null);
+        m.put(10,"Sachin");
+        m.put(1,null);
+        m.put(7,"Dhoni");
+        m.put(2,null);
+        System.out.println(m);
+        //Traversing Map
+        Set set=m.entrySet();//Converting to Set so that we can traverse
+        Iterator itr=set.iterator();
+        while(itr.hasNext()){
+            //Converting to Map.Entry so that we can get key and value separately
+            Map.Entry entry=(Map.Entry)itr.next();
+            System.out.println(entry.getKey()+" "+entry.getValue());
+        }
+
+        Map<Integer,String> lm=new LinkedHashMap<Integer, String>();
+        lm.put(45,"Rohit");
+        lm.put(18,"Kohli");
+        lm.put(null,null);
+        lm.put(10,"Sachin");
+        lm.put(1,null);
+        lm.put(7,"Dhoni");
+        lm.put(2,null);
+        System.out.println(lm);
+
+        //tree map sort object based on tree's keys values
+        Map<Integer,String> tm=new TreeMap<Integer, String>();
+        tm.put(45,"Rohit");
+        tm.put(18,"Kohli");
+        tm.put(93,"Bumrah");
+        tm.put(10,"Sachin");
+        tm.put(17,"ABD");
+        tm.put(7,"Dhoni");
+        tm.put(2,null);
+        System.out.println(tm);
+
+        //keys and values cant be null
+        Map<Integer,String> ht=new Hashtable<Integer,String>();
+        ht.put(45,"Rohit");
+        ht.put(18,"Kohli");
+        ht.put(93,"Bumrah");
+        ht.put(10,"Sachin");
+        ht.put(17,"ABD");
+        ht.put(7,"Dhoni");
+        ht.put(1,"KL rahul");
+        System.out.println(ht);
+
+
+    }
+}
+OUTPUT:
+{null=null, 1=null, 18=Kohli, 2=null, 7=Dhoni, 10=Sachin, 45=Rohit}
+null null
+1 null
+18 Kohli
+2 null
+7 Dhoni
+10 Sachin
+45 Rohit
+{45=Rohit, 18=Kohli, null=null, 10=Sachin, 1=null, 7=Dhoni, 2=null}
+{2=null, 7=Dhoni, 10=Sachin, 17=ABD, 18=Kohli, 45=Rohit, 93=Bumrah}
+{10=Sachin, 7=Dhoni, 18=Kohli, 17=ABD, 93=Bumrah, 1=KL rahul, 45=Rohit}
+
+
+
+
+DEMO PROJECT:
+package com.thbs.customer_pack;
+
+public class Customer {
+    int id;
+    String cus_name;
+
+    public Customer(int id, String cus_name) {
+        this.id = id;
+        this.cus_name = cus_name;
+    }
+
+    public String getCus_name(){
+        return this.cus_name;
+    }
+}
+
+package com.thbs.main_pack;
+
+import com.thbs.customer_pack.Customer;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Map<String, Integer> hm1=new HashMap<String,Integer>();
+        hm1.put("Sofa",2000);
+        hm1.put("Lamp",4500);
+        hm1.put("Table",3000);
+        System.out.println(hm1);
+
+        hm1.keySet();
+        System.out.println(hm1.values());
+        for (String s: hm1.keySet())
+            System.out.println(s+"  "+hm1.get(s));
+        int sum=0;
+        for (int s1: hm1.values())
+            sum+=s1;
+        System.out.println("total ivestments: Rs."+sum);
+
+OUTPUT:
+{Sofa=2000, Table=3000, Lamp=4500}
+[2000, 3000, 4500]
+Sofa  2000
+Table  3000
+Lamp  4500
+total ivestments: Rs.9500
+
+
+demo2
+package com.thbs.main_pack;
+
+import com.thbs.customer_pack.Customer;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+
+    public static void main(String[] args) {
+HashMap<String, Integer> shopping=new HashMap<String, Integer>();
+        Customer cus1=new Customer(1,"Shardul");
+        Customer cus2=new Customer(2,"Manoj");
+
+        shopping.put(cus1.getCus_name(), 9500);
+        shopping.put(cus2.getCus_name(),7000);
+
+        HashMap<Customer, Integer> shopping1=new HashMap<Customer, Integer>();
+        shopping1.put(new Customer(3,"Aaaaa"), 4000);
+        shopping1.put(new Customer(4,"Baaaa"), 5000);
+
+        int total_sales_amt=0;
+        for (String c:shopping.keySet()) {
+            total_sales_amt += shopping.get(c);
+            System.out.println(c+"  "+shopping.get(c));
+        }
+        System.out.println("Total sales made today is: Rs."+total_sales_amt);
+
+        total_sales_amt=0;
+        for (Customer cc:shopping1.keySet()){
+            System.out.println(cc.getCus_name()+"  "+shopping1.get(cc));
+            total_sales_amt+=shopping1.get(cc);
+        }
+        System.out.println("Total sales made by shop1 today is: Rs."+total_sales_amt);
+    }
+}
+
+OUTPUT:
+Shardul  9500
+Manoj  7000
+Total sales made today is: Rs.16500
+Baaaa  5000
+Aaaaa  4000
+Total sales made by shop1 today is: Rs.9000
+
+
+
+COMPARABLE INTERFACE:
+package com.thbs.student_pack;
+
+public class Student implements Comparable<Student> {
+    private int id, marks;
+    private String name;
+
+    public Student(int id, String name, int marks) {
+        this.id = id;
+        this.marks = marks;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", marks=" + marks +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        if(marks<o.marks)
+            return 1;
+        else if(marks==o.marks)
+            return 0;
+        return -1;
+    }
+}
+package com.thbs.main_pack;
+
+import com.thbs.student_pack.Student;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        ArrayList<Student> al=new ArrayList<Student>();
+        al.add(new Student(3, "Kiran",70));
+        al.add(new Student(4,"Deepak",67));
+        al.add(new Student(1, "Vinay",77));
+        al.add(new Student(2, "Kishan",79));
+
+        System.out.println("Before Sorting");
+        for (Student s:al)
+            System.out.println(s);
+
+        Collections.sort(al);
+        System.out.println("After sorting");
+        for (Student s:al)
+            System.out.println(s);
+    }
+}
+
+OUTPUT:
+Before Sorting
+Student{id=3, marks=70, name='Kiran'}
+Student{id=4, marks=67, name='Deepak'}
+Student{id=1, marks=77, name='Vinay'}
+Student{id=2, marks=79, name='Kishan'}
+After sorting
+Student{id=2, marks=79, name='Kishan'}
+Student{id=1, marks=77, name='Vinay'}
+Student{id=3, marks=70, name='Kiran'}
+Student{id=4, marks=67, name='Deepak'}
+
+
+COMPARATOR INTERFACE:
+package com.thbs;
+
+public class Person {
+    public int id;
+    public String name;
+    public int age;
+
+    public Person(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+    public Person(int age){
+        this.age=age;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+package com.thbs;
+
+import java.util.Comparator;
+
+public class AgeComaprator implements Comparator {
+    
+    @Override
+    public int compare(Object o1, Object o2) {
+        Person p1= (Person) o1;
+        Person p2= (Person) o2;
+        if (p1.getAge()<p2.getAge())
+            return 1;
+        else if (p1.getAge()==p2.getAge())
+            return 0;
+        else
+            return -1;
+    }
+
+
+
+}
+package com.thbs;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Vector;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+
+        Vector<Person> v=new Vector<Person>();
+        v.add(new Person(1,"Manoj", 21));
+        v.add(new Person(3,"Vivek", 23));
+        v.add(new Person(1,"Vishnu", 18));
+        v.add(new Person(1,"Manju", 20));
+
+        System.out.println("Before Sorting");
+        System.out.println(v);
+        System.out.println("After sorting");
+        AgeComaprator ag=new AgeComaprator();
+        Collections.sort(v,ag);
+        for (Person a:v)
+            System.out.println(a);
+
+    }
+}
+OUTPUT:
+[Person{id=1, name='Manoj', age=21}, Person{id=3, name='Vivek', age=23}, Person{id=1, name='Vishnu', age=18}, Person{id=1, name='Manju', age=20}]
+After sorting
+Person{id=3, name='Vivek', age=23}
+Person{id=1, name='Manoj', age=21}
+Person{id=1, name='Manju', age=20}
+Person{id=1, name='Vishnu', age=18}
+
