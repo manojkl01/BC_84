@@ -1,0 +1,778 @@
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos
+$ mkdir gitFile
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos
+$ cd gitFile
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile
+$ git init
+Initialized empty Git repository in C:/Users/manoj_dilip/Videos/gitFile/.git/
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ touch eg1.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        eg1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git add eg1.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   eg1.txt
+
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git commit -m "initial commit"
+[master (root-commit) 101d3bb] initial commit
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 eg1.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git remote add origin https://github.com/manojkl01/learninggitcmds.git
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git push -f origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 216 bytes | 43.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/manojkl01/learninggitcmds/pull/new/master
+remote:
+To https://github.com/manojkl01/learninggitcmds.git
+ * [new branch]      master -> master
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   eg1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git add eg1.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git commit -m "initial commit"
+[master 27004ed] initial commit
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git push -f origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 251 bytes | 125.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/manojkl01/learninggitcmds.git
+   101d3bb..27004ed  master -> master
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git checkout rohit
+error: pathspec 'rohit' did not match any file(s) known to git
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git remote
+origin
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git branch branch1
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git branch
+  branch1
+* master
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git checkout branch1
+Switched to branch 'branch1'
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ touch eg2.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ touch eg3.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ add eg2.txt
+bash: add: command not found
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git add eg2.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git commit -m "eg2 commit"
+[branch1 ebd60ca] eg2 commit
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 eg2.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git add eg3.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git commit -m "eg3 commit"
+[branch1 b747f65] eg3 commit
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 eg3.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ touch eg4.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ touch eg5.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git add eg4.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git commit -m "eg4 commit"
+[branch1 c5d6b82] eg4 commit
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 eg4.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git add eg5.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git commit -m "eg5 commit"
+[branch1 1ec89f9] eg5 commit
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 eg5.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git status
+On branch branch1
+nothing to commit, working tree clean
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git loc
+git: 'loc' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git log
+commit 1ec89f91349efaaa43f5cc7868916e1fa76cff1c (HEAD -> branch1)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:23:55 2021 +0530
+
+    eg5 commit
+
+commit c5d6b82f884cab70539b46979d80c8ca22158efc
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:23:37 2021 +0530
+
+    eg4 commit
+
+commit b747f65e95e4759e6f422bc264bc389b79020319
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:23:10 2021 +0530
+
+    eg3 commit
+
+commit ebd60ca4330a3de6e5f2f11b91fa3656dd6b76ab
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:22:43 2021 +0530
+
+    eg2 commit
+
+commit 27004eddd9d8873b516ac22a2052a4bdf23603fc (origin/master, master)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:15:52 2021 +0530
+
+    initial commit
+
+commit 101d3bb593c308535458ea763c70ff0a290d4403
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 16:59:55 2021 +0530
+
+    initial commit
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ ^C
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ ^C
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ ^C
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git reset  ebd60ca4330a3de6e5f2f11b91fa3656dd6b76ab
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git log
+commit ebd60ca4330a3de6e5f2f11b91fa3656dd6b76ab (HEAD -> branch1)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:22:43 2021 +0530
+
+    eg2 commit
+
+commit 27004eddd9d8873b516ac22a2052a4bdf23603fc (origin/master, master)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:15:52 2021 +0530
+
+    initial commit
+
+commit 101d3bb593c308535458ea763c70ff0a290d4403
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 16:59:55 2021 +0530
+
+    initial commit
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git push -f origin master
+Everything up-to-date
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git push -f origin branch1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 271 bytes | 271.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/manojkl01/learninggitcmds/pull/new/branch1
+remote:
+To https://github.com/manojkl01/learninggitcmds.git
+ * [new branch]      branch1 -> branch1
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch1)
+$ git checkout master
+Switched to branch 'master'
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git branch branch2
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (master)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ touch f1.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ touch f2.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git add f1.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git commit -m "f1 commit"
+[branch2 4e1a8cb] f1 commit
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git add f2.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git commit -m "f2 commit"
+[branch2 18e98ee] f2 commit
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f2.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        eg3.txt
+        eg4.txt
+        eg5.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        eg3.txt
+        eg4.txt
+        eg5.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git log
+commit 18e98ee0e2b52d26bb660deaa52050d366405b25 (HEAD -> branch2)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:37:11 2021 +0530
+
+    f2 commit
+
+commit 4e1a8cbd6af6f170458d73078db17cbe1f82f534
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:36:44 2021 +0530
+
+    f1 commit
+
+commit 27004eddd9d8873b516ac22a2052a4bdf23603fc (origin/master, master)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:15:52 2021 +0530
+
+    initial commit
+
+commit 101d3bb593c308535458ea763c70ff0a290d4403
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 16:59:55 2021 +0530
+
+    initial commit
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git stash
+No local changes to save
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ touch abc.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git stash
+No local changes to save
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        abc.txt
+        eg3.txt
+        eg4.txt
+        eg5.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git add .
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc.txt
+        new file:   eg3.txt
+        new file:   eg4.txt
+        new file:   eg5.txt
+
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git commit -m "done1"
+[branch2 9bb9753] done1
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 1 insertion(+)
+ create mode 100644 abc.txt
+ create mode 100644 eg3.txt
+ create mode 100644 eg4.txt
+ create mode 100644 eg5.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git log
+commit 9bb9753e46f85f923cfe66ea8bc3d203a5f54189 (HEAD -> branch2)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:41:20 2021 +0530
+
+    done1
+
+commit 18e98ee0e2b52d26bb660deaa52050d366405b25
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:37:11 2021 +0530
+
+    f2 commit
+
+commit 4e1a8cbd6af6f170458d73078db17cbe1f82f534
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:36:44 2021 +0530
+
+    f1 commit
+
+commit 27004eddd9d8873b516ac22a2052a4bdf23603fc (origin/master, master)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:15:52 2021 +0530
+
+    initial commit
+
+commit 101d3bb593c308535458ea763c70ff0a290d4403
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 16:59:55 2021 +0530
+
+    initial commit
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+nothing to commit, working tree clean
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git stash
+No local changes to save
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ ls
+abc.txt  eg1.txt  eg3.txt  eg4.txt  eg5.txt  f1.txt  f2.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ touch abcd.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git add abcd.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git commit -m "abcd txt"
+[branch2 5f0d0fe] abcd txt
+ Committer: Manoj Dilip <manoj_dilip@thbs.india.com>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 abcd.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+nothing to commit, working tree clean
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git stash
+No local changes to save
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git push -f origin branch2
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 856 bytes | 285.00 KiB/s, done.
+Total 10 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+remote:
+remote: Create a pull request for 'branch2' on GitHub by visiting:
+remote:      https://github.com/manojkl01/learninggitcmds/pull/new/branch2
+remote:
+To https://github.com/manojkl01/learninggitcmds.git
+ * [new branch]      branch2 -> branch2
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ touch efg.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        efg.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git log
+commit 5f0d0fe24cacf6391a7fc0ff44e501c0dbe13861 (HEAD -> branch2, origin/branch2)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:43:36 2021 +0530
+
+    abcd txt
+
+commit 9bb9753e46f85f923cfe66ea8bc3d203a5f54189
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:41:20 2021 +0530
+
+    done1
+
+commit 18e98ee0e2b52d26bb660deaa52050d366405b25
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:37:11 2021 +0530
+
+    f2 commit
+
+commit 4e1a8cbd6af6f170458d73078db17cbe1f82f534
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:36:44 2021 +0530
+
+    f1 commit
+
+commit 27004eddd9d8873b516ac22a2052a4bdf23603fc (origin/master, master)
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 17:15:52 2021 +0530
+
+    initial commit
+
+commit 101d3bb593c308535458ea763c70ff0a290d4403
+Author: Manoj Dilip <manoj_dilip@thbs.india.com>
+Date:   Fri Nov 19 16:59:55 2021 +0530
+
+    initial commit
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git stash
+No local changes to save
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git add efg.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git stash
+Saved working directory and index state WIP on branch2: 5f0d0fe abcd txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+nothing to commit, working tree clean
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git stash list
+stash@{0}: WIP on branch2: 5f0d0fe abcd txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git branch br1
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git checkout br1
+Switched to branch 'br1'
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git stash pop
+On branch br1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   efg.txt
+
+Dropped refs/stash@{0} (ba24dafb2da531da4c7e64222f4eb1a3529f0c12)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ ls
+abc.txt  abcd.txt  efg.txt  eg1.txt  eg3.txt  eg4.txt  eg5.txt  f1.txt  f2.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git status
+On branch br1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   efg.txt
+
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git stash list
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ touch ret.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git add ret.txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git stash
+Saved working directory and index state WIP on br1: 5f0d0fe abcd txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git stash list
+stash@{0}: WIP on br1: 5f0d0fe abcd txt
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git stash clear
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git stash list
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (br1)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git status
+On branch branch2
+nothing to commit, working tree clean
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git remote -v
+origin  https://github.com/manojkl01/learninggitcmds.git (fetch)
+origin  https://github.com/manojkl01/learninggitcmds.git (push)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$ git pull origin branch2
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 652 bytes | 34.00 KiB/s, done.
+From https://github.com/manojkl01/learninggitcmds
+ * branch            branch2    -> FETCH_HEAD
+   5f0d0fe..c37b1d7  branch2    -> origin/branch2
+Updating 5f0d0fe..c37b1d7
+Fast-forward
+ abc.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+manoj_dilip@THBSSTRLPT-163 MINGW64 ~/Videos/gitFile (branch2)
+$
